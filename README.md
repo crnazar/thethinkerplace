@@ -1,113 +1,227 @@
-# CLAUDE.md
+# Youth as Teacher Educators
 
-This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+An interactive educational website for preservice teacher education programs that teaches equity-oriented, youth-centered approaches to science and engineering education based on Dr. Christina Restrepo Nazar's award-winning research.
 
-## Project Overview
+## Overview
 
-**The Thinker Place** - Educational platform repository
+This website provides comprehensive resources for preservice teachers to learn how to center youth knowledge, engage with community wisdom, and implement equity-oriented STEM teaching practices. It is based on peer-reviewed research on youth-participatory approaches to teacher education.
 
-### Subproject: Youth as Teacher Educators
+## Features
 
-Located in `youth-teacher-educators/`, this is an interactive educational website for preservice teacher education programs. It teaches equity-oriented, youth-centered approaches to science and engineering education based on Dr. Christina Restrepo Nazar's award-winning research.
+### 5 Comprehensive Tabs
 
-## Development Commands
+1. **Theoretical Frameworks** - Epistemological foundations including:
+   - Youth as Knowledge Producers
+   - Multiple Epistemologies Framework
+   - Rightful Presence vs. Equity as Inclusion
+   - Critical Epistemologies of Place
+   - Counternarratives vs. Master Narratives
 
-### Youth as Teacher Educators Website
+2. **Youth as Teacher Educators** - Dr. Nazar's dissertation research:
+   - Three interconnected studies
+   - Youth counternarratives exploration
+   - Teaching imaginaries development
+   - Classroom enactment case studies
+   - Youth-created multimodal cases (Faith, Christopher, AD)
 
-```bash
-cd youth-teacher-educators
-npm install          # Install dependencies
-npm run dev         # Start development server (http://localhost:5173)
-npm run build       # Build for production
-npm run preview     # Preview production build
-npm run lint        # Run ESLint
-```
+3. **Engaging Engineering in Place** - Localizing engineering with community wisdom:
+   - Critical Epistemologies of Place framework
+   - Faith's Fancy Hat (wearable engineering)
+   - Christopher's Anti-Bullying App
+   - Place-based project builder
+
+4. **Practice-Based Approaches** - Pedagogical tools and methodologies:
+   - Social Design Experiments
+   - Community Ethnography as Pedagogy
+   - Youth-Participatory Action Research (YPAR)
+   - Engineering for Sustainable Communities
+   - Navigating Multiple Epistemologies
+
+5. **Resources & Reflection** - Self-assessment and materials:
+   - Progress tracking dashboard
+   - Self-assessment tools
+   - Downloadable templates and guides
+   - Academic readings and citations
+   - Reflection journal
+
+### Interactive Features
+
+- **Glossary Tooltips** - Hover over key terms for definitions and examples
+- **Interactive Scenarios** - Make teaching decisions and receive feedback
+- **Animations** - Smooth transitions and engaging visual explanations
+- **Progress Tracking** - Local storage tracks completion and bookmarks
+- **Reflection Journal** - Save reflections with guided prompts
+- **Self-Assessment Tools** - Evaluate your equity-oriented teaching practice
 
 ## Technology Stack
 
-### Youth as Teacher Educators
-- **Framework**: React 19 with TypeScript
-- **Build Tool**: Vite 7
-- **Styling**: Tailwind CSS v4
-- **Routing**: React Router v6
-- **Animations**: Framer Motion
-- **Icons**: Lucide React
-- **State**: React Hooks + Local Storage
+- **Framework:** React 19 with TypeScript
+- **Build Tool:** Vite 7
+- **Styling:** Tailwind CSS v4
+- **Animations:** Framer Motion
+- **Routing:** React Router v6
+- **Icons:** Lucide React
+- **State Management:** React Hooks + Local Storage
 
-## Architecture
+## Getting Started
 
-### Youth as Teacher Educators Website
+### Prerequisites
 
-**Component-Based Architecture:**
-- Reusable UI components in `src/components/`
-- Page components for each tab in `src/pages/`
-- Custom hooks in `src/hooks/`
-- Type definitions in `src/types/`
-- Utility functions in `src/utils/`
-- Static data in `src/data/`
+- Node.js (v18 or higher recommended)
+- npm or yarn
 
-**Key Design Patterns:**
-- **Local Storage for State**: Progress tracking, bookmarks, and reflections stored in browser local storage
-- **Glossary Tooltip System**: Hover tooltips for key terminology throughout the site
-- **Tab-Based Navigation**: Five main tabs with React Router for client-side routing
-- **Progress Tracking**: Automatic section completion tracking and visual progress indicators
-- **Interactive Learning**: Scenario-based activities, quizzes, and self-assessments
+### Installation
 
-**Content Organization:**
-1. **Theoretical Frameworks** - Epistemological foundations
-2. **Youth as Teacher Educators** - Dr. Nazar's research
-3. **Engaging Engineering in Place** - Community-based engineering
-4. **Practice-Based Approaches** - Pedagogical methodologies
-5. **Resources & Reflection** - Self-assessment and downloads
-
-## Important Implementation Details
-
-### Tailwind CSS v4
-This project uses Tailwind CSS v4, which uses CSS imports rather than JavaScript config:
-- Import via `@import "tailwindcss";` in `index.css`
-- No `tailwind.config.js` file needed
-
-### TypeScript Type Imports
-When importing types, use `import type { TypeName }` syntax to comply with `verbatimModuleSyntax`:
-```typescript
-import type { ProgressData } from '../types';  // ✓ Correct
-import { ProgressData } from '../types';        // ✗ Wrong
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd youth-teacher-educators
 ```
 
-### Local Storage Schema
-Progress data stored at key `youth-teacher-educators-progress`:
-```typescript
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Start the development server:
+```bash
+npm run dev
+```
+
+4. Open your browser to `http://localhost:5173`
+
+### Build for Production
+
+```bash
+npm run build
+```
+
+The built files will be in the `dist/` directory.
+
+### Preview Production Build
+
+```bash
+npm run preview
+```
+
+## Project Structure
+
+```
+src/
+├── components/       # Reusable UI components
+│   ├── Button.tsx
+│   ├── Card.tsx
+│   ├── GlossaryTooltip.tsx
+│   ├── Navigation.tsx
+│   ├── Layout.tsx
+│   ├── ProgressBar.tsx
+│   └── Section.tsx
+├── pages/           # Main page components for each tab
+│   ├── TheoreticalFrameworks.tsx
+│   ├── YouthAsEducators.tsx
+│   ├── EngineeringInPlace.tsx
+│   ├── PracticeBasedApproaches.tsx
+│   └── Resources.tsx
+├── data/            # Static data and content
+│   ├── glossary.ts  # Glossary terms and definitions
+│   └── tabs.ts      # Tab configuration
+├── hooks/           # Custom React hooks
+│   └── useProgress.ts
+├── utils/           # Utility functions
+│   └── storage.ts   # Local storage helpers
+├── types/           # TypeScript type definitions
+│   └── index.ts
+├── App.tsx          # Main app component with routing
+├── main.tsx         # Entry point
+└── index.css        # Global styles
+```
+
+## Deployment
+
+### Deploy to Netlify
+
+1. Build the project:
+```bash
+npm run build
+```
+
+2. Deploy the `dist/` directory to Netlify:
+   - Drag and drop the `dist` folder to Netlify Drop
+   - Or connect your Git repository and set:
+     - Build command: `npm run build`
+     - Publish directory: `dist`
+
+### Deploy to Vercel
+
+1. Install Vercel CLI (optional):
+```bash
+npm install -g vercel
+```
+
+2. Deploy:
+```bash
+vercel
+```
+
+Or connect your Git repository on the Vercel dashboard.
+
+### Deploy to GitHub Pages
+
+1. Install gh-pages:
+```bash
+npm install -D gh-pages
+```
+
+2. Add to `package.json`:
+```json
 {
-  completedSections: string[],
-  bookmarkedResources: string[],
-  reflections: ReflectionEntry[],
-  lastVisitedTab: string,
-  startDate: string,
-  lastAccessDate: string
+  "homepage": "https://yourusername.github.io/youth-teacher-educators",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist"
+  }
 }
 ```
 
-## Content Sources
+3. Update `vite.config.ts` to set the base path:
+```typescript
+export default defineConfig({
+  base: '/youth-teacher-educators/',
+  plugins: [react()],
+})
+```
 
-The website content is based on peer-reviewed research:
-- Nazar, C. R. (2018). Youth as Teacher Educators [Dissertation, Michigan State University]
-- Nazar et al. (2019). Critically engaging engineering in place. *Science Education*
-- Calabrese Barton & Tan (2020). Rightful presence framework. *Educational Researcher*
-- Related work on epistemologies of place, YPAR, and community ethnography
+4. Deploy:
+```bash
+npm run deploy
+```
 
-## Future Development
+## Key Research Sources
 
-- Consider adding backend for user accounts and cross-device sync
-- Add video content (currently has placeholder structure)
-- Create actual PDF downloads for templates and guides
-- Add more interactive scenarios and quizzes
-- Implement accessibility testing and improvements
-- Add unit tests for components and utils
+This website is based on the following research:
 
-## Deployment Options
+- **Nazar, C. R.** (2018). *Youth as Teacher Educators: Supporting Preservice Teachers in Developing Youth-Centered, Equity-Oriented Science Teaching Practices.* Ph.D. Dissertation, Michigan State University. [Winner of 2020 AACTE Outstanding Dissertation Award]
 
-- **Netlify**: Drag & drop `dist/` or connect Git repo
-- **Vercel**: CLI deployment or Git integration
-- **GitHub Pages**: Use gh-pages package (requires base path config)
+- **Nazar, C. R., Calabrese Barton, A., Morris, C., & Tan, E.** (2019). Critically engaging engineering in place by localizing counternarratives in engineering design. *Science Education, 103*(3), 638-664.
 
-See `youth-teacher-educators/README.md` for detailed deployment instructions.
+- **Calabrese Barton, A., & Tan, E.** (2020). Beyond equity as inclusion: A framework of "rightful presence" for guiding justice-oriented studies in teaching and learning. *Educational Researcher, 49*(6), 433-440.
+
+- **Tan, E., Calabrese Barton, A., & Benavides, A.** (2019). Engineering for sustainable communities: Epistemic tools in support of equitable and consequential middle school engineering. *Science Education, 103*(4), 1011-1046.
+
+## License
+
+This project is created for educational purposes based on publicly available research.
+
+## Contact
+
+For questions about the research, please contact Dr. Christina Restrepo Nazar at California State University, Los Angeles.
+
+## Development
+
+Built with React + TypeScript + Vite
+
+- React 19 with TypeScript for type-safe components
+- Vite for fast development and optimized builds
+- Tailwind CSS v4 for styling
+- Framer Motion for smooth animations
+- React Router for client-side routing
