@@ -17,7 +17,10 @@ export const Card: React.FC<CardProps> = ({
   onClick,
 }) => {
   const cardVariants = {
-    hover: interactive ? { y: -4, boxShadow: '0 10px 30px rgba(0,0,0,0.15)' } : {},
+    hover: interactive ? {
+      y: -6,
+      boxShadow: '0 20px 40px rgba(124, 58, 237, 0.15), 0 10px 20px rgba(20, 184, 166, 0.1)'
+    } : {},
   };
 
   return (
@@ -25,12 +28,15 @@ export const Card: React.FC<CardProps> = ({
       variants={cardVariants}
       whileHover="hover"
       onClick={onClick}
-      className={`bg-white rounded-lg shadow-md p-6 ${
-        interactive ? 'cursor-pointer' : ''
+      transition={{ duration: 0.3 }}
+      className={`bg-white rounded-2xl shadow-lg border border-purple-100 p-7 backdrop-blur-sm ${
+        interactive ? 'cursor-pointer hover:border-purple-300' : ''
       } ${className}`}
     >
       {title && (
-        <h3 className="text-xl font-semibold text-teal-800 mb-4">{title}</h3>
+        <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent mb-5 pb-2 border-b-2 border-purple-200">
+          {title}
+        </h3>
       )}
       {children}
     </motion.div>

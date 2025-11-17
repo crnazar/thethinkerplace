@@ -31,11 +31,11 @@ export const Section: React.FC<SectionProps> = ({
     <motion.section
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.6 }}
       className={`mb-12 ${className}`}
       id={id}
     >
-      <h2 className="text-3xl font-bold text-teal-800 mb-6 pb-3 border-b-2 border-teal-200">
+      <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-600 to-teal-500 bg-clip-text text-transparent mb-6 pb-4 border-b-4 border-gradient-to-r from-purple-300 to-teal-300">
         {title}
       </h2>
       <div className="space-y-6">{children}</div>
