@@ -1,227 +1,78 @@
-# Youth as Teacher Educators
+# The T(h)inker Place
 
-An interactive educational website for preservice teacher education programs that teaches equity-oriented, youth-centered approaches to science and engineering education based on Dr. Christina Restrepo Nazar's award-winning research.
+Personal research portfolio website for Dr. Christina Restrepo Nazar.
 
-## Overview
+🌐 **Live Site**: [thethinkerplace.com](https://thethinkerplace.com)
 
-This website provides comprehensive resources for preservice teachers to learn how to center youth knowledge, engage with community wisdom, and implement equity-oriented STEM teaching practices. It is based on peer-reviewed research on youth-participatory approaches to teacher education.
+## About
 
-## Features
+The T(h)inker Place is a research lab exploring AI as cultural borderland, equity-oriented science education, and youth-centered approaches to learning.
 
-### 5 Comprehensive Tabs
+## Setup Instructions
 
-1. **Theoretical Frameworks** - Epistemological foundations including:
-   - Youth as Knowledge Producers
-   - Multiple Epistemologies Framework
-   - Rightful Presence vs. Equity as Inclusion
-   - Critical Epistemologies of Place
-   - Counternarratives vs. Master Narratives
+### Deploying to GitHub Pages
 
-2. **Youth as Teacher Educators** - Dr. Nazar's dissertation research:
-   - Three interconnected studies
-   - Youth counternarratives exploration
-   - Teaching imaginaries development
-   - Classroom enactment case studies
-   - Youth-created multimodal cases (Faith, Christopher, AD)
+1. Go to your repository **Settings** → **Pages**
+2. Under "Source", select **Deploy from a branch**
+3. Select the **main** branch and **/ (root)** folder
+4. Click **Save**
+5. Your site will be live at `https://yourusername.github.io/thethinkerplace/`
 
-3. **Engaging Engineering in Place** - Localizing engineering with community wisdom:
-   - Critical Epistemologies of Place framework
-   - Faith's Fancy Hat (wearable engineering)
-   - Christopher's Anti-Bullying App
-   - Place-based project builder
+### Connecting Your Custom Domain (thethinkerplace.com)
 
-4. **Practice-Based Approaches** - Pedagogical tools and methodologies:
-   - Social Design Experiments
-   - Community Ethnography as Pedagogy
-   - Youth-Participatory Action Research (YPAR)
-   - Engineering for Sustainable Communities
-   - Navigating Multiple Epistemologies
+1. In your repository, create a file called `CNAME` containing just: `thethinkerplace.com`
+2. Go to your domain registrar (where you bought the domain)
+3. Add these DNS records:
+   - **A Record**: Point `@` to `185.199.108.153`
+   - **A Record**: Point `@` to `185.199.109.153`
+   - **A Record**: Point `@` to `185.199.110.153`
+   - **A Record**: Point `@` to `185.199.111.153`
+   - **CNAME Record**: Point `www` to `yourusername.github.io`
+4. Wait for DNS propagation (can take up to 24 hours)
+5. In GitHub Pages settings, enter your custom domain and enable HTTPS
 
-5. **Resources & Reflection** - Self-assessment and materials:
-   - Progress tracking dashboard
-   - Self-assessment tools
-   - Downloadable templates and guides
-   - Academic readings and citations
-   - Reflection journal
+## Adding Your Content
 
-### Interactive Features
+### Images
 
-- **Glossary Tooltips** - Hover over key terms for definitions and examples
-- **Interactive Scenarios** - Make teaching decisions and receive feedback
-- **Animations** - Smooth transitions and engaging visual explanations
-- **Progress Tracking** - Local storage tracks completion and bookmarks
-- **Reflection Journal** - Save reflections with guided prompts
-- **Self-Assessment Tools** - Evaluate your equity-oriented teaching practice
+Add your images to the `/images` folder:
+- `profile.jpg` - Your profile photo
+- `hero-bg.jpg` - Hero section background
+- `project-*.jpg` - Project screenshots
+- `blog-*.jpg` - Blog post images
 
-## Technology Stack
-
-- **Framework:** React 19 with TypeScript
-- **Build Tool:** Vite 7
-- **Styling:** Tailwind CSS v4
-- **Animations:** Framer Motion
-- **Routing:** React Router v6
-- **Icons:** Lucide React
-- **State Management:** React Hooks + Local Storage
-
-## Getting Started
-
-### Prerequisites
-
-- Node.js (v18 or higher recommended)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone <repository-url>
-cd youth-teacher-educators
+Then update the HTML to reference them:
+```html
+<img src="images/profile.jpg" alt="Christina Restrepo Nazar">
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
+### Updating Content
 
-3. Start the development server:
-```bash
-npm run dev
-```
+Edit `index.html` to:
+- Update your bio and descriptions
+- Add/remove publications
+- Update project links
+- Add your social media URLs
+- Add your email address
 
-4. Open your browser to `http://localhost:5173`
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-The built files will be in the `dist/` directory.
-
-### Preview Production Build
-
-```bash
-npm run preview
-```
-
-## Project Structure
+## File Structure
 
 ```
-src/
-├── components/       # Reusable UI components
-│   ├── Button.tsx
-│   ├── Card.tsx
-│   ├── GlossaryTooltip.tsx
-│   ├── Navigation.tsx
-│   ├── Layout.tsx
-│   ├── ProgressBar.tsx
-│   └── Section.tsx
-├── pages/           # Main page components for each tab
-│   ├── TheoreticalFrameworks.tsx
-│   ├── YouthAsEducators.tsx
-│   ├── EngineeringInPlace.tsx
-│   ├── PracticeBasedApproaches.tsx
-│   └── Resources.tsx
-├── data/            # Static data and content
-│   ├── glossary.ts  # Glossary terms and definitions
-│   └── tabs.ts      # Tab configuration
-├── hooks/           # Custom React hooks
-│   └── useProgress.ts
-├── utils/           # Utility functions
-│   └── storage.ts   # Local storage helpers
-├── types/           # TypeScript type definitions
-│   └── index.ts
-├── App.tsx          # Main app component with routing
-├── main.tsx         # Entry point
-└── index.css        # Global styles
+thethinkerplace/
+├── index.html      # Main HTML file with all sections
+├── styles.css      # All styling (dark theme, teal accents)
+├── script.js       # Navigation and animations
+├── images/         # Your images go here
+├── CNAME           # Custom domain (create this)
+└── README.md       # This file
 ```
 
-## Deployment
+## Design
 
-### Deploy to Netlify
-
-1. Build the project:
-```bash
-npm run build
-```
-
-2. Deploy the `dist/` directory to Netlify:
-   - Drag and drop the `dist` folder to Netlify Drop
-   - Or connect your Git repository and set:
-     - Build command: `npm run build`
-     - Publish directory: `dist`
-
-### Deploy to Vercel
-
-1. Install Vercel CLI (optional):
-```bash
-npm install -g vercel
-```
-
-2. Deploy:
-```bash
-vercel
-```
-
-Or connect your Git repository on the Vercel dashboard.
-
-### Deploy to GitHub Pages
-
-1. Install gh-pages:
-```bash
-npm install -D gh-pages
-```
-
-2. Add to `package.json`:
-```json
-{
-  "homepage": "https://yourusername.github.io/youth-teacher-educators",
-  "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
-  }
-}
-```
-
-3. Update `vite.config.ts` to set the base path:
-```typescript
-export default defineConfig({
-  base: '/youth-teacher-educators/',
-  plugins: [react()],
-})
-```
-
-4. Deploy:
-```bash
-npm run deploy
-```
-
-## Key Research Sources
-
-This website is based on the following research:
-
-- **Nazar, C. R.** (2018). *Youth as Teacher Educators: Supporting Preservice Teachers in Developing Youth-Centered, Equity-Oriented Science Teaching Practices.* Ph.D. Dissertation, Michigan State University. [Winner of 2020 AACTE Outstanding Dissertation Award]
-
-- **Nazar, C. R., Calabrese Barton, A., Morris, C., & Tan, E.** (2019). Critically engaging engineering in place by localizing counternarratives in engineering design. *Science Education, 103*(3), 638-664.
-
-- **Calabrese Barton, A., & Tan, E.** (2020). Beyond equity as inclusion: A framework of "rightful presence" for guiding justice-oriented studies in teaching and learning. *Educational Researcher, 49*(6), 433-440.
-
-- **Tan, E., Calabrese Barton, A., & Benavides, A.** (2019). Engineering for sustainable communities: Epistemic tools in support of equitable and consequential middle school engineering. *Science Education, 103*(4), 1011-1046.
+- **Colors**: Dark charcoal (#1c1c1c), Teal (#51c1c2), Cream (#f9f9f9)
+- **Fonts**: Pacifico (headings), Comfortaa (body)
+- **Features**: Responsive design, smooth scrolling, fade-in animations
 
 ## License
 
-This project is created for educational purposes based on publicly available research.
-
-## Contact
-
-For questions about the research, please contact Dr. Christina Restrepo Nazar at California State University, Los Angeles.
-
-## Development
-
-Built with React + TypeScript + Vite
-
-- React 19 with TypeScript for type-safe components
-- Vite for fast development and optimized builds
-- Tailwind CSS v4 for styling
-- Framer Motion for smooth animations
-- React Router for client-side routing
+© 2024 Christina Restrepo Nazar. All rights reserved.
